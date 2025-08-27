@@ -90,10 +90,7 @@ const buildPromptConstraints = (options: RecipeGenerationOptions): string => {
 }
 
 export const generateRecipes = async (ingredients: string[], options: RecipeGenerationOptions): Promise<Recipe[]> => {
-  if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable not set.");
-  }
-  
+  // FIX: Removed API_KEY check per guidelines, assuming it is always present.
   if (ingredients.length === 0) {
     throw new Error("Please provide at least one ingredient.");
   }
@@ -106,10 +103,7 @@ export const generateRecipes = async (ingredients: string[], options: RecipeGene
 };
 
 export const generateRandomRecipe = async (options: RecipeGenerationOptions): Promise<Recipe[]> => {
-  if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable not set.");
-  }
-
+  // FIX: Removed API_KEY check per guidelines, assuming it is always present.
   let prompt = `You are an expert chef. Create 1 unique and delicious recipe.`;
   prompt += buildPromptConstraints(options);
   prompt += `\nProvide a short, enticing description and a rating from 1 to 5 for the recipe.`;
