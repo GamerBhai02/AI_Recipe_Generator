@@ -1,0 +1,5 @@
+{
+  "name": "AI Recipe Generator",
+  "description": "Generate delicious recipes based on the ingredients you have on hand. Simply list your ingredients and let AI craft the perfect dish for you.",
+  "requestFramePermissions": []
+}
